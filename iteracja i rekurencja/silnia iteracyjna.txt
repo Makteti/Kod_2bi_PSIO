@@ -1,23 +1,22 @@
-#include<iostream>
-
+//silnia iteracyjnie
+#include "pch.h"
+#include <iostream>
 using namespace std;
 
 int main()
 {
-   int n, a=1;
-   cout << "Podaj liczbe naturalna: ";
-   cin >> n;
-   cout << n << "! = ";
-   if (n == 0) cout<<1;
-   else
-{
-   while (n > 0)
-{
-   a*= n;
-   n--;
-}
+	int s;
+	long long silnia(1);
+	cout << "Podaj liczbe\n";
+	cin >> s;
+	for(int i=1; i<=s; i++)
+	{
+		silnia *= i;
+	}
+	cout << silnia;
 
-}
-   cout << a << endl;
-   return 0;
+
+	return 0;
+	//silnia z 5 to: 1*2*3*4*5(120)
+
 }
