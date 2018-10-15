@@ -2,9 +2,9 @@
 
 using namespace std;
 
-float horner(float n, float wsp[20],float x)
+int horner(float n, int wsp[20],int x)
 {
-if (n==0) return wsp[0];
+if (n==0) return wsp[0];                                                    //pozmieniałem na inty, bo z floatami cos nie dzialalo xd
 else return horner(n-1, wsp, x)*x+wsp[n]; // n to wielomian
 }
 
@@ -12,7 +12,7 @@ else return horner(n-1, wsp, x)*x+wsp[n]; // n to wielomian
 int main()
 {
 
-float x, n, wsp[20];
+int x, n, wsp[20];
 
 cout<<"wielomian";
 cin>>n; //wprowadzenie wielomiany
