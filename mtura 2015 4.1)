@@ -1,0 +1,40 @@
+#include <iostream>
+#include <fstream>
+
+
+
+
+using namespace std;
+
+int main()
+{
+    int lz(0), lj(0), l(0);
+    fstream liczby;
+    fstream odpowiedzi;
+
+    liczby.open("liczby.txt", ios::in);
+    odpowiedzi.open("wynik4.txt", ios::out);
+    string ciag;
+    for(int i=0; i<1000; i++)
+    {
+        liczby>>ciag;
+        for(int j=0; j<ciag.length(); j++)
+        {
+            if(ciag[j]=='0')
+                lz++;
+            else if(ciag[j]=='1')
+                lj++;
+        }
+        if(lz>lj)
+            l++;
+
+        lz = 0;
+        lj = 0;
+    }
+
+    odpowiedzi<<"4.1) "<<l<<endl;
+    liczby.close();
+    odpowiedzi.close();
+
+    return 0;
+}
